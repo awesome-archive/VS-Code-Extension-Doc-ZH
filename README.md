@@ -17,44 +17,9 @@
 
 ## 翻译计划
 
-- **第一期计划** - 翻译*插件创作*内的所有章节
-    - ✅ [示例：语言服务器](https://code.visualstudio.com/docs/extensions/example-language-server)
-    - ✅ [调试适配器](https://code.visualstudio.com/docs/extensions/example-debuggers)
-    - ✅ [Webview API](https://code.visualstudio.com/docs/extensions/webview)
-    - ✅ [更多例子](https://code.visualstudio.com/docs/extensions/samples)
-    - ✅ [开发插件](https://code.visualstudio.com/docs/extensions/developing-extensions)
-    - ✅ [发布插件](https://code.visualstudio.com/docs/extensions/publish-extension)
-    - ✅ [测试插件](https://code.visualstudio.com/docs/extensions/testing-extensions)
+翻译计划已移动到[Progress](https://github.com/Liiked/VS-Code-Extension-Doc-ZH/blob/master/Progress.md)
 
-- **第二期计划** - 翻译*扩展性参阅*内的所有章节
-    - ✅ [扩展性参阅](https://code.visualstudio.com/docs/extensionAPI/overview)
-    - ✅ [扩展性原则和模式](https://code.visualstudio.com/docs/extensionAPI/patterns-and-principles)
-    - ✅ [语言插件指引](https://code.visualstudio.com/docs/extensionAPI/language-support)
-    - ✅ [插件清单](https://code.visualstudio.com/docs/extensionAPI/extension-manifest)
-    - ✅ [发布内容配置](https://code.visualstudio.com/docs/extensionAPI/extension-points)
-    - ✅ [激活事件](https://code.visualstudio.com/docs/extensionAPI/activation-events)
-    - ✅ [文档选择器](https://code.visualstudio.com/docs/extensionAPI/document-selectors)
-    - ✅ [vscode 命名空间API](https://code.visualstudio.com/docs/extensionAPI/vscode-api)
-    - ✅ [复杂命令](https://code.visualstudio.com/docs/extensionAPI/vscode-api-commands)
-    - ✅ [调试器API](https://code.visualstudio.com/docs/extensionAPI/api-debugging)
-    - ✅ [源控制](https://code.visualstudio.com/docs/extensionAPI/api-scm)
-    - ✅ [Markdown插件](https://code.visualstudio.com/docs/extensionAPI/api-markdown)
-
-- **第三期计划** - 审阅文档中的链接和内容
-    - ✅ 审阅插件创作和Readme
-        - ✅ 介绍部分
-        - ✅ 从示例开始
-        - ✅ 开发步骤 + 进阶
-    - ✅ 审阅扩展性参考
-        - ✅ 1-4节
-        - ✅ 5-7节
-        - ✅ 8-10节
-    - ✅ 添加navbar和原始页面
-
-- **第四期计划**
-    - ✅ 添加[示例-任务](https://code.visualstudio.com/docs/extensions/example-tasks)章节
-    - ✅ 添加术语速查小插件
-    - 添加快速入门章节（待定）
+如果你有兴趣、能力和时间，欢迎[贡献代码](#贡献代码)
 
 ## 翻译指南
 
@@ -62,17 +27,19 @@
 
 - 及时更新术语表
 - 禁止机器翻译
+- 约定用法
+    如Promise通常不做翻译，若有必要或遇到困难的词语，请使用“中文（English）”的方式来显示，如：`异步请求（promise）`，在有参考资料后得出的翻译结果，需要在术语表释义后面注明词汇出现来源或释义链接。
 - 避免冗余
     ```markdown
-    By implementing a `WebviewPanelSerializer`, your webviews can be automatically restored 
-    when VS Code restarts. Serialization builds on `getState` and `setState`, and is only 
+    By implementing a `WebviewPanelSerializer`, your webviews can be automatically restored
+    when VS Code restarts. Serialization builds on `getState` and `setState`, and is only
     enabled if your extension registers a `WebviewPanelSerializer` for your webviews.
     ```
     后一句`and is only enabled if your extension registers a WebviewPanelSerializer for your webviews`再翻译出来显得多余，可以不翻译。
 
 - 平白易懂
     ```markdown
-    Consider using a helper library to construct your HTML strings, or at least 
+    Consider using a helper library to construct your HTML strings, or at least
     ensure that all content from the user's workspace is properly sanitized.
     ```
     虽然这里**HTML 字符串**贴合`HTML strings`的表述，但是适当的加工则更有利于阅读，最终可考虑翻译为“**尝试使用辅助库构建你的HTML模板，或者确保所有来自用户工作区的内容都通过了审查**”。
@@ -82,7 +49,6 @@
     在多人合作翻译中，个人风格可能与已提交翻译不匹配，但这种情况下不建议修改现有的翻译成果。
 - 术语翻译优先参考[github的开源翻译项目](https://github.com/Microsoft/vscode-loc/blob/master/i18n/vscode-language-pack-zh-hans/translations/main.i18n.json)
 
-!> 约定用法，如Promise通常不做翻译，若有必要或遇到困难的词语，请使用“中文（English）”的方式来显示，如：`异步请求（promise）`，在有参考资料后得出的翻译结果，需要在术语表释义后面注明词汇出现来源或释义链接。
 
 ## 开发指引
 
@@ -91,7 +57,7 @@
 #### 贡献代码
 
 - Markdown的格式要求，尽量避免使用`*`用于表示列表，而是使用`-`等其他符号
-- 贡献流程：fork/clone本项目，创建分支如“fix/chapter_testing_extensions”，修改文件，提交pr到“branch/docs”
+- 贡献流程：fork/clone本项目，根据目前的项目进度和自己的兴趣，挑选进行中的翻译，在issue面板中创建一个`help translate`告知项目owner，通过后创建分支如“fix/chapter_testing_extensions”，修改文件，提交pr到“branch/docs”
 - 请在翻译中遵循[翻译指南](#翻译指南)，否则本项目的owner可能会与你进行深度的讨论~
 
 ```bash
@@ -99,3 +65,11 @@
 npm i docsify-cli -g
 docsify serve docs
 ```
+
+## 特别感谢
+
+[//]: contributor-faces
+
+<a href="https://github.com/ddzy"><img src="https://avatars3.githubusercontent.com/u/33921398?s=400&v=4" title="ddzy" width="80" height="80"></a>
+
+[//]: contributor-faces
